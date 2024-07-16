@@ -26,19 +26,28 @@ reload(animatic_camera_manager)
 
 animatic_camera_manager.run()
 ```
+The loaded main UI, startup and UberCams in the scene are filtered out.
+
+![main UI.](images/uber_camera_creator.png)
 
 ## Catching Input Errors
-Three types of initial user input error are caught when ‘Build Uber Camera’ is clicked, the user is taken back to the main ui to resolve these.
+Three types of initial user input error are caught when ‘Build Uber Camera’ is clicked, the user is taken back to the main UI to resolve these.
 1. No checked cameras
 2. ‘In Frame’  > ‘Out Frame’
 3. Frame range overlaps for checked cameras
 
+![Frame overlap.](images/error_frame_overlap.png)
+
+![No cameras checked.](images/error_no_cameras_checked.png)
+
 ## Missing frames between cameras
 When building an uber camera , a continuous range of frames between cameras is expected.
-In the example to the right the ‘In Frames’ and ‘Out Frames’ follow on from each other. 
+In the example below the ‘In Frames’ and ‘Out Frames’ follow on from each other. 
 - camera3: 1001 - 1006
 - camera1: 1007 - 1189
 - camera4: 1190 - 1195
+
+![Continuous range.](images/continuous_range.png)
 
 When a continuous range of frames between cameras is not provided the user is given 2 options.
 1. Extend first camera’s ‘Out Frame’ to the next camera’s ‘In Frame’
@@ -47,3 +56,10 @@ When a continuous range of frames between cameras is not provided the user is gi
     - camera4: 1156-1171
 2. The user can return to the main ui and manually edit.
    
+![Warning Missing Frames.](images/warning_missing_frames.png)
+
+## Working Example
+
+![Final0.](images/final_example_0.png)
+
+![Final1.](images/final_example_1.png)
